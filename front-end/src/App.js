@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import './App.css';
+const url = 'https://loyal-statement-production.up.railway.app/tarefa';
 
 function App() {
   const [tarefas, setTarefas] = useState([]);
 
   const getTarefas = async () => {
-    const { data } = await axios('http://localhost:3001/tarefa')
+
+    const { data } = await axios(url);
     setTarefas(data);
   }
 
